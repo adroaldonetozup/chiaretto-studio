@@ -1,0 +1,32 @@
+name: Publish plugin test
+
+on:
+  push:
+    branches: 
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with: 
+          ref: main
+          path: plugin-app-completo
+      
+      - run: ls 
+
+      - name: Run test action without publish
+        uses: stack-spot/publish-plugin-action@main
+        with:
+          client_id: ${{ secrets.CLIENT_ID }}
+          client_key: ${{ secrets.CLIENT_KEY }}
+          realm: ${{ secrets.REALM }}
+          studio: stackspot-content
