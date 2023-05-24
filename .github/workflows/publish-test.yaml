@@ -17,15 +17,9 @@ jobs:
 
       - name: Checkout repo
         uses: actions/checkout@v3
-      
-      - run: |
-          ls 
-          cd plugin-app-padrao-basico
-          echo "Folder plugin-app-padrao-basico"
 
       - name: Run test action without publish
         uses: stack-spot/publish-plugin-action@main
-        working-directory: plugin-app-padrao-basico
         with:
           client_id: ${{ secrets.CLIENT_ID }}
           client_key: ${{ secrets.CLIENT_KEY }}
