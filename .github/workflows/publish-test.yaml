@@ -20,8 +20,7 @@ jobs:
       
       - run: |
           ls 
-          cd plugin-app-padrao-basico/
-          ls
+          cd plugin-app-padrao-basico && bash
 
       - name: Run test action without publish
         uses: stack-spot/publish-plugin-action@main
