@@ -17,11 +17,10 @@ jobs:
 
       - name: Checkout repo
         uses: actions/checkout@v3
-        with: 
-          ref: main
-          path: plugin-app-completo
       
-      - run: ls 
+      - run: |
+          ls 
+          cd plugin-app-padrao-basico
 
       - name: Run test action without publish
         uses: stack-spot/publish-plugin-action@main
