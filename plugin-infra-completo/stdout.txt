@@ -1,4 +1,0 @@
-
-> Validando plugin 'plugin-infra-completo'
-- [92mValidado plugin com sucesso[0m
-

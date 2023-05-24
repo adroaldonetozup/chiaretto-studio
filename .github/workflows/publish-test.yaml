@@ -18,7 +18,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Run test action without publish
+      - name: Run publish test
         uses: stack-spot/publish-plugin-action@main
         with:
           client_id: ${{ secrets.CLIENT_ID }}
